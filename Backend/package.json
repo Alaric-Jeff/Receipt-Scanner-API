@@ -28,7 +28,6 @@
     "express": "^5.1.0",
     "multer": "^2.0.0",
     "node-tesseract-ocr": "^2.2.1",
-    "prisma": "^6.8.2",
     "sharp": "^0.34.2",
     "winston": "^3.17.0"
   },
@@ -39,7 +38,8 @@
     "@types/node": "^22.15.29",
     "eslint": "^9.28.0",
     "nodemon": "^3.1.10",
-    "ts-node": "^10.9.1",
+    "prisma": "^6.8.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
