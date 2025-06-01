@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2022",                      // Modern JS output
+    "module": "ESNext",                      // Use ES modules
+    "moduleResolution": "node",              // Resolve modules like Node.js
+    "outDir": "./dist",                      // Compiled files go here
+    "rootDir": "./src",                      // Your source code folder
+    "strict": true,                         // Enable strict type-checking
+    "esModuleInterop": true,                 // Allow default import from CommonJS
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "sourceMap": true,                       // Generate source maps for debugging
+    "types": ["node", "express"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
