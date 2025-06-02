@@ -7,5 +7,22 @@ const config: tesseract.Config = {
 };
 
 export const extractTextFromImage = async (imagePath: string): Promise<string> => {
-  return await tesseract.recognize(imagePath, config);
+  try {
+    const text = await tesseract.recognize(imagePath, config);
+    const productLines = text.match(/.*(Product|Item|Name).*/gi) || [];
+    const priceLines = text.match(/.*(Price|Cost).*\$?[\d,.]+.*/gi) || [];
+    const combinedLines = Array.from(new Set([...productLines, ...priceLines]));
+
+    if (combinedLines.length > 0) {
+      return combinedLines.join('\n');
+    }
+
+    return text.trim();
+
+  } catch (error) {
+    console.error('Tesseract OCR error:', error);
+    return '';
+  }
 };
+
+  

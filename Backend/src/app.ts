@@ -34,13 +34,15 @@ app.post(
       })
 
       res.status(200).json({
+        success: true,
         message: 'Image uploaded and processed successfully',
         file: req.file,
         text: extractedText,
       });
+
     } catch (error: any) {
       logger.error(`Error during OCR: ${error.message}`);
-      res.status(500).json({ error: 'Failed to process image with OCR' });
+      res.status(500).json({ success: false, message: 'Failed to process image' });
     }
   }
 );
